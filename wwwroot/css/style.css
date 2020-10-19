@@ -1,0 +1,74 @@
+﻿input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Index */
+.columna {
+    background-image: url(../img/portada-discoteca-t.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 785px;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.centro {
+    font-size: 20px;
+    margin-left: 80px;
+}
+
+.box {
+    margin: 10px;
+    padding: 13px;
+    color: white;
+    background-color: #b49dd1;
+}
+
+.img {
+    width: 237px;
+    height: 200px;
+}
+
+div#info {
+    position: absolute;
+    overflow: hidden;
+    width: 237px;
+    height: 200px;
+    background-color: rgba(31, 31, 31, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+div#imagen:hover div#info {
+    opacity: 1;
+}
+
+p#headline {
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: -55px;
+    margin-top: 15px;
+    transition: margin-left 0.3s;
+}
+
+div#imagen:hover p#headline {
+    margin-left: 60px;
+}
+
+p#descripcion {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 200px;
+    transition: margin-top 0.4s;
+}
+
+div#imagen:hover p#descripcion {
+    margin-top: 75px;
+}
+/* Product */
+.form {
+    padding: 35px 50px 0px 50px;
+}

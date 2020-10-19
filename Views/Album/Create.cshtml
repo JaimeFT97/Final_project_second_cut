@@ -1,0 +1,54 @@
+﻿@model FinalProjectSecondCut.Domain.Album
+@if (ViewBag.IsSuccess==true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        The album has been created succesfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<form class="border p-3 my-2 " asp-action="Create" method="POST">
+    <input name="form" type="hidden" readonly />
+    <h1 class="h4 text-center">Add Album</h1>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Album Name</label>
+            <input type="text" asp-for="Album_name" class="form-control" placeholder="Write a album name...">
+            <span asp-validation-for="Album_name" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label>Album Cover</label>
+            <input type="text" asp-for="Album_cover" class="form-control" placeholder="Write a cover...">
+            <span asp-validation-for="Album_cover" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Song quiantity</label>
+            <input type="number" asp-for="Song_quantity" min="0" pattern="[0-9]" class="form-control" placeholder="Write a song quantity...">
+            <span asp-validation-for="Song_quantity" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-6">
+            <label>Duration</label>
+            <input type="text" asp-for="Duration" class="form-control" placeholder="Write a duration...">
+            <span asp-validation-for="Duration" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Link Album</label>
+            <input type="text" asp-for="Link_album" class="form-control" placeholder="Write a link...">
+            <span asp-validation-for="Link_album" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label>Artist</label>
+            <select class="form-control" asp-for="Artist_id" asp-items="ViewBag.Artist">
+                <option>Please select a artist...</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" style="width: 775px;">Send</button>
+</form>

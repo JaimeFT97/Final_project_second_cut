@@ -1,0 +1,46 @@
+﻿@model FinalProjectSecondCut.Domain.Artist
+@if (ViewBag.IsSuccess==true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        The artist has been created succesfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<form class="border p-3 my-2 " asp-action="Create" method="POST">
+    <h1 class="h4 text-center">Add Artist</h1>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Artistic Name</label>
+            <input type="text" asp-for="Artistic_name" class="form-control" placeholder="Write a artistic name...">
+            <span asp-validation-for="Artistic_name" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label>Real Name</label>
+            <input type="text" asp-for="Real_name" class="form-control" placeholder="Write a real name...">
+            <span asp-validation-for="Real_name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Native Country</label>
+        <select class="form-control" asp-for="Country_id" asp-items="ViewBag.Country">
+            <option>Please select a native city...</option>
+        </select>
+        <span asp-validation-for="Country_id" class="text-danger"></span>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Average Salary</label>
+            <input type="number" min="0" pattern="[0-9]" asp-for="Average_salary" class="form-control" placeholder="Write a real name...">
+            <span asp-validation-for="Average_salary" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-6">
+            <label>Ocuppation</label>
+            <input type="text" asp-for="Occupation" class="form-control" placeholder="Write a occupation...">
+            <span asp-validation-for="Occupation" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" style="width: 775px;">Send</button>
+</form>

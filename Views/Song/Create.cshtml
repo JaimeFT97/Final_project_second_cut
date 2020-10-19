@@ -1,0 +1,67 @@
+﻿@model FinalProjectSecondCut.Domain.Song
+@if (ViewBag.IsSuccess==true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        The song has been created succesfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<form class="border p-3 my-2 " asp-action="Create" method="POST">
+    <h1 class="h4 text-center">Add Song</h1>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Song Name</label>
+            <input type="text" asp-for="Song_name" class="form-control" placeholder="Write a song name...">
+            <span asp-validation-for="Song_name" class="text-danger"></span>
+        </div>
+        <div class="form-group col-6">
+            <label>Duration</label>
+            <input type="text" asp-for="Duration" class="form-control" placeholder="Write a duration...">
+            <span asp-validation-for="Duration" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Song Gender</label>
+            <select class="form-control" asp-for="Gender_id" asp-items="ViewBag.Gender">
+                <option value="">Please select a gender...</option>
+            </select>
+        </div>
+        <div class="form-group col-6">
+            <label>Original Language</label>
+            <select class="form-control" asp-for="Language_id" asp-items="ViewBag.Language">
+                <option value="">Please select a language...</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Original Country</label>
+            <select class="form-control" asp-for="Country_id" asp-items="ViewBag.Country">
+                <option value="">Please select a country...</option>
+            </select>
+        </div>
+        <div class="form-group col-6">
+            <label>Song Link</label>
+            <input type="text" asp-for="Link_song" class="form-control" placeholder="Write a link...">
+            <span asp-validation-for="Link_song" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-6">
+            <label>Album ID</label>
+            <select class="form-control" asp-for="Album_id" asp-items="ViewBag.Album">
+                <option value="">Please select a album...</option>
+            </select>
+        </div>
+        <div class="form-group col-6">
+            <label>Artist ID</label>
+            <select class="form-control" asp-for="Artist_id" asp-items="ViewBag.Artist">
+                <option value="">Please select a artist...</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" style="width: 775px;">Send</button>
+</form>
